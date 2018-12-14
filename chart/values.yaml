@@ -1,0 +1,24 @@
+# Default values for lab-01.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+service:
+  type: NodePort
+
+rbac:
+  enabled: true
+
+webUi:
+  image:
+    repository: stuartleeks/vk-web-ui
+    tag: latest
+    pullPolicy: Always
+
+virtualKubelet:
+  image:
+    repository: stuartleeks/virtual-kubelet
+    tag: latest
+    pullPolicy: Always
+  nodeName: virtual-kubelet-web
+
+webApiUrl: http://localhost:5000
